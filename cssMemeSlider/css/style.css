@@ -47,10 +47,7 @@ body {
 .slider {
   margin: 0 auto;
   max-width: 70rem;
-  
   height: auto;
-  overflow: hidden;
-  
   overflow: hidden;
 }
 .slides__container {
@@ -83,10 +80,39 @@ body {
 .slider-bottom__container {
   display: flex;
 }
+
 .description__container {
+  position: relative;
   width: 100%;
+  min-height: 10rem;
 }
+
 .description {
+  position: absolute; 
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+}
+
+#slide-1:checked ~ .slider-bottom__container .description__container .description-1 {
+  opacity: 1;
+  visibility: visible;
+}
+#slide-2:checked ~ .slider-bottom__container .description__container .description-2 {
+  opacity: 1;
+  visibility: visible;
+}
+#slide-3:checked ~ .slider-bottom__container .description__container .description-3 {
+  opacity: 1;
+  visibility: visible;
+}
+#slide-4:checked ~ .slider-bottom__container .description__container .description-4{
+  opacity: 1;
+  visibility: visible;
+}
+#slide-5:checked ~ .slider-bottom__container .description__container .description-5 {
+  opacity: 1;
+  visibility: visible;
 }
 .slider__buttons {
   display: flex;
@@ -110,18 +136,18 @@ body {
 }
 
 
-#slide-1:checked ~ .slide-1__wrapper {
+#slide-1:checked ~ .slides__container .slide-1__wrapper {
   margin-left: 0;
 }
-#slide-2:checked ~ .slide-1__wrapper {
+#slide-2:checked ~ .slides__container .slide-1__wrapper {
   margin-left: -20%;
 }
-#slide-3:checked ~ .slide-1__wrapper {
+#slide-3:checked ~ .slides__container .slide-1__wrapper {
   margin-left: -40%;
 }
-#slide-4:checked ~ .slide-1__wrapper {
+#slide-4:checked ~ .slides__container .slide-1__wrapper {
   margin-left: -60%;
 }
-#slide-5:checked ~ .slide-1__wrapper {
+#slide-5:checked ~ .slides__container .slide-1__wrapper {
   margin-left: -80%;
 }
