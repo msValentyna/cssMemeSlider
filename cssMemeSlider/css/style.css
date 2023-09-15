@@ -114,8 +114,38 @@ body {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
-  background-color: #FFF;
-  border: .2rem solid blue;
+  background-color: blue;
+  border: .3rem solid blue;
+  transition: all 1s;
+}
+.slider__button:hover .slider__circle {
+  background-color: white;
+  border-color: white;
+}
+#slide-1:checked ~ .slider-bottom__container .slider__button .slider__circle-1,
+#slide-2:checked ~ .slider-bottom__container .slider__button .slider__circle-2,
+#slide-3:checked ~ .slider-bottom__container .slider__button .slider__circle-3,
+#slide-4:checked ~ .slider-bottom__container .slider__button .slider__circle-4,
+#slide-5:checked ~ .slider-bottom__container .slider__button .slider__circle-5
+ {
+  background-color: transparent;
+}
+#slide-1:active ~ .slider-bottom__container .slider__button .slider__circle-1,
+#slide-2:active ~ .slider-bottom__container .slider__button .slider__circle-2,
+#slide-3:active ~ .slider-bottom__container .slider__button .slider__circle-3,
+#slide-4:active ~ .slider-bottom__container .slider__button .slider__circle-4,
+#slide-5:active ~ .slider-bottom__container .slider__button .slider__circle-5
+ {
+  background-color: rgb(195, 0, 255);
+  border-color: rgb(195, 0, 255);
+}
+#slide-1:checked ~ .slider-bottom__container .slider__button-1,
+#slide-2:checked ~ .slider-bottom__container .slider__button-2,
+#slide-3:checked ~ .slider-bottom__container .slider__button-3,
+#slide-4:checked ~ .slider-bottom__container .slider__button-4,
+#slide-5:checked ~ .slider-bottom__container .slider__button-5
+ {
+  cursor: auto;
 }
 #slide-1:checked ~ .slides__container .slide-1__wrapper {
   margin-left: 0;
