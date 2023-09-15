@@ -59,60 +59,43 @@ body {
 .slide__wrapper {
   width: 20%;
   transition: all 1s ease;
-
-}
-.slide-1__wrapper {
-  
 }
 .slide__image {
   max-width: 100%;
   height: auto;
   border-radius: 1rem;
 }
-.slide-2__wrapper {
-}
-.slide-3__wrapper {
-}
-.slide-4__wrapper {
-}
-.slide-5__wrapper {
-}
 .slider-bottom__container {
   display: flex;
 }
 
 .description__container {
-  position: relative;
   width: 100%;
-  min-height: 10rem;
+  overflow: hidden;
 }
-
+.descriptions {
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
 .description {
-  position: absolute; 
-  opacity: 0;
-  visibility: hidden;
-  transition: all .3s;
+  width: 20%;
+  transition: all 1s;
 }
-
-#slide-1:checked ~ .slider-bottom__container .description__container .description-1 {
-  opacity: 1;
-  visibility: visible;
+#slide-1:checked ~ .slider-bottom__container .description__container .descriptions .description-1 {
+  margin-left: 0;
 }
-#slide-2:checked ~ .slider-bottom__container .description__container .description-2 {
-  opacity: 1;
-  visibility: visible;
+#slide-2:checked ~ .slider-bottom__container .description__container .descriptions .description-1 {
+  margin-left: -20%;
 }
-#slide-3:checked ~ .slider-bottom__container .description__container .description-3 {
-  opacity: 1;
-  visibility: visible;
+#slide-3:checked ~ .slider-bottom__container .description__container .descriptions .description-1 {
+  margin-left: -40%;
 }
-#slide-4:checked ~ .slider-bottom__container .description__container .description-4{
-  opacity: 1;
-  visibility: visible;
+#slide-4:checked ~ .slider-bottom__container .description__container .descriptions .description-1 {
+  margin-left: -60%;
 }
-#slide-5:checked ~ .slider-bottom__container .description__container .description-5 {
-  opacity: 1;
-  visibility: visible;
+#slide-5:checked ~ .slider-bottom__container .description__container .descriptions .description-1 {
+  margin-left: -80%;
 }
 .slider__buttons {
   display: flex;
@@ -134,8 +117,6 @@ body {
   background-color: #FFF;
   border: .2rem solid blue;
 }
-
-
 #slide-1:checked ~ .slides__container .slide-1__wrapper {
   margin-left: 0;
 }
@@ -150,4 +131,17 @@ body {
 }
 #slide-5:checked ~ .slides__container .slide-1__wrapper {
   margin-left: -80%;
+}
+
+@media screen and (max-width: 640px) {
+  body {
+    font-size: 1.6rem;
+  }
+  .slider-bottom__container {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  .slider__buttons {
+    align-self: end;
+  }
 }
