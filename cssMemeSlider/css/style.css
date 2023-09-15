@@ -1,0 +1,177 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  color: #FFF;
+}
+ 
+.container {
+  margin: 0 auto;
+  padding: 5rem;
+  background-color: #000;
+  max-width: 80rem;
+
+}
+.slider-input {
+  position: absolute;
+  width: .1rem;
+  height: .1rem;
+  margin: -.1rem;
+  border: 0;
+  padding: 0;
+  opacity: 0;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.slider {
+  margin: 0 auto;
+  max-width: 70rem;
+  height: auto;
+  overflow: hidden;
+}
+.slides__container {
+  width: 500%;
+  height: 100%;
+  display: flex;
+  margin-bottom: 2rem;
+}
+.slide__wrapper {
+  width: 20%;
+  transition: all 1s ease;
+}
+.slide__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+.slider-bottom__container {
+  display: flex;
+}
+
+.description__container {
+  width: 100%;
+  overflow: hidden;
+}
+.descriptions {
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+.description {
+  width: 20%;
+  transition: all 1s;
+}
+#slide-1:checked ~ .slider-bottom__container .description__container .descriptions .description-1 {
+  margin-left: 0;
+}
+#slide-2:checked ~ .slider-bottom__container .description__container .descriptions .description-1 {
+  margin-left: -20%;
+}
+#slide-3:checked ~ .slider-bottom__container .description__container .descriptions .description-1 {
+  margin-left: -40%;
+}
+#slide-4:checked ~ .slider-bottom__container .description__container .descriptions .description-1 {
+  margin-left: -60%;
+}
+#slide-5:checked ~ .slider-bottom__container .description__container .descriptions .description-1 {
+  margin-left: -80%;
+}
+.slider__buttons {
+  display: flex;
+}
+.slider__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.slider__circle {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: blue;
+  border: .3rem solid blue;
+  transition: all 1s;
+}
+.slider__button:hover .slider__circle {
+  background-color: white;
+  border-color: white;
+}
+#slide-1:checked ~ .slider-bottom__container .slider__button .slider__circle-1,
+#slide-2:checked ~ .slider-bottom__container .slider__button .slider__circle-2,
+#slide-3:checked ~ .slider-bottom__container .slider__button .slider__circle-3,
+#slide-4:checked ~ .slider-bottom__container .slider__button .slider__circle-4,
+#slide-5:checked ~ .slider-bottom__container .slider__button .slider__circle-5
+ {
+  background-color: transparent;
+}
+#slide-1:active ~ .slider-bottom__container .slider__button .slider__circle-1,
+#slide-2:active ~ .slider-bottom__container .slider__button .slider__circle-2,
+#slide-3:active ~ .slider-bottom__container .slider__button .slider__circle-3,
+#slide-4:active ~ .slider-bottom__container .slider__button .slider__circle-4,
+#slide-5:active ~ .slider-bottom__container .slider__button .slider__circle-5
+ {
+  background-color: rgb(195, 0, 255);
+  border-color: rgb(195, 0, 255);
+}
+#slide-1:checked ~ .slider-bottom__container .slider__button-1,
+#slide-2:checked ~ .slider-bottom__container .slider__button-2,
+#slide-3:checked ~ .slider-bottom__container .slider__button-3,
+#slide-4:checked ~ .slider-bottom__container .slider__button-4,
+#slide-5:checked ~ .slider-bottom__container .slider__button-5
+ {
+  cursor: auto;
+}
+#slide-1:checked ~ .slides__container .slide-1__wrapper {
+  margin-left: 0;
+}
+#slide-2:checked ~ .slides__container .slide-1__wrapper {
+  margin-left: -20%;
+}
+#slide-3:checked ~ .slides__container .slide-1__wrapper {
+  margin-left: -40%;
+}
+#slide-4:checked ~ .slides__container .slide-1__wrapper {
+  margin-left: -60%;
+}
+#slide-5:checked ~ .slides__container .slide-1__wrapper {
+  margin-left: -80%;
+}
+
+@media screen and (max-width: 640px) {
+  body {
+    font-size: 1.6rem;
+  }
+  .slider-bottom__container {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  .slider__buttons {
+    align-self: end;
+  }
+}
